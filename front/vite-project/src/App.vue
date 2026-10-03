@@ -40,7 +40,7 @@ button {
   padding: 4px 10px;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #bbb;
 }
 .filter-bar {
   display: flex;
@@ -64,8 +64,5 @@ button {
   color: #409eff;
   cursor: pointer;
   text-decoration: none;
-}
-.fund-code-link:hover {
-  text-decoration: underline;
 }
 </style>
