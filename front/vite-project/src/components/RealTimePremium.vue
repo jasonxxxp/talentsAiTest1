@@ -99,6 +99,7 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { Refresh, RefreshRight } from '@element-plus/icons-vue'
+import { parseChineseAmount } from '../common'
 
 // 后端接口地址
 const API_URL = 'http://127.0.0.1:8000/api/lof'
@@ -230,15 +231,7 @@ function manualRefresh() {
   fetchData()
 }
 
-// 解析带中文单位的金额字符串（"1.50亿" → 1.5e8, "320.00万" → 3.2e6, "5000" → 5000）
-function parseChineseAmount(str) {
-  if (!str || str === '-') return 0
-  const s = String(str)
-  const num = parseFloat(s) || 0
-  if (s.includes('亿')) return num * 1e8
-  if (s.includes('万')) return num * 1e4
-  return num
-}
+
 
 // 数值排序方法（供 el-table 列排序使用）
 function numericSort(a, b, prop) {
