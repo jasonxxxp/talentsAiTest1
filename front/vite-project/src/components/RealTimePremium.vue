@@ -217,7 +217,7 @@ async function fetchData() {
       fundList.value = res.data.data
       lastUpdateTime.value = formatTime(new Date())
     } else {
-      ElMessage.error(res.data.msg || '数据获取失败')
+      ElMessage.error(res.data.msg ?? '数据获取失败')
     }
   } catch (err) {
     ElMessage.error('请求失败：请确认 Python 后端已启动')
