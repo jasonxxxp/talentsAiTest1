@@ -99,7 +99,7 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { Refresh, RefreshRight } from '@element-plus/icons-vue'
-import { parseChineseAmount } from '../common'
+import { parseChineseAmount,formatTime } from '../common'
 
 // 后端接口地址
 const API_URL = 'http://127.0.0.1:8000/api/lof'
@@ -171,10 +171,7 @@ function goHistory(row) {
   router.push({ path: '/history', query: { fundCode: row.fundCode, fundName: row.fundName } })
 }
 
-function formatTime(date) {
-  const pad = n => String(n).padStart(2, '0')
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`
-}
+
 
 // 申购状态选项
 const statusOptions = computed(() => {
