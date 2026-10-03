@@ -279,8 +279,8 @@ async function toggleFavorite(fundCode, isChecked) {
   }
 }
 
-onMounted(() => {
-  loadFavorites()
+onMounted(async () => {
+  await loadFavorites()
   fetchData()
 })
 </script>
