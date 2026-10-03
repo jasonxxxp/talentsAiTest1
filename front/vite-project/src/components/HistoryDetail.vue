@@ -24,7 +24,7 @@
             <el-table-column label="份额涨幅" align="center" min-width="100">
         <template #default="{ row }">
           <span :class="getRateClass(row.changePct)">
-            {{ row.changePct != null ? formatPct(row.changePct) : '-' }}
+            {{ row.changePct != null ? formatPct(row.changePct) : '空' }}
           </span>
         </template>
       </el-table-column>
