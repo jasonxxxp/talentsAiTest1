@@ -75,11 +75,7 @@
           />
         </template>
       </el-table-column>
-      <el-table-column prop="tradePrice" label="场内价格" align="center" min-width="110" sortable :sort-method="(a, b) => numericSort(a, b, 'tradePrice')" />
-      <el-table-column prop="netValue" label="场外净值(昨日)" align="center" min-width="140" sortable :sort-method="(a, b) => numericSort(a, b, 'netValue')" />
-      
-        
-        <el-table-column prop="estimateValue" label="估算净值(实时)" align="center" min-width="140" sortable :sort-method="(a, b) => numericSort(a, b, 'estimateValue')" />
+      <el-table-column prop="estimateValue" label="估算净值(实时)" align="center" min-width="140" sortable :sort-method="(a, b) => numericSort(a, b, 'estimateValue')" />
             <el-table-column prop="estimatePremiumRate" label="溢价率(实时)" align="center" min-width="130" sortable :sort-method="(a, b) => numericSort(a, b, 'estimatePremiumRate')">
         <template #default="{ row }">
           <span :class="getRateClass(row.estimatePremiumRate)">
@@ -87,6 +83,11 @@
           </span>
         </template>
       </el-table-column>
+      <el-table-column prop="tradePrice" label="场内价格" align="center" min-width="110" sortable :sort-method="(a, b) => numericSort(a, b, 'tradePrice')" />
+      <el-table-column prop="netValue" label="场外净值(昨日)" align="center" min-width="140" sortable :sort-method="(a, b) => numericSort(a, b, 'netValue')" />
+      
+        
+        
       
     </el-table>
   </div>
