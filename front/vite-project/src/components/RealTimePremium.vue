@@ -101,7 +101,7 @@ import { ElMessage } from 'element-plus'
 import { Refresh, RefreshRight } from '@element-plus/icons-vue'
 
 // 后端接口地址
-const API_URL = 'http://192.168.31.28:8000/api/lof'
+const API_URL = 'http://127.0.0.1:8000/api/lof'
 
 // ========== IndexedDB 收藏 ==========
 const DB_NAME = 'lof-monitor'
