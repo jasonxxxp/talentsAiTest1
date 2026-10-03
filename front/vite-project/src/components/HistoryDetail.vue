@@ -21,6 +21,13 @@
       </el-table-column>
       <el-table-column prop="turnover" label="成交额(万元)" align="center" min-width="120" />
       <el-table-column prop="shareVolume" label="场内份额(万份)" align="center" min-width="130" />
+            <el-table-column label="份额涨幅" align="center" min-width="100">
+        <template #default="{ row }">
+          <span :class="getRateClass(row.changePct)">
+            {{ row.changePct != null ? formatPct(row.changePct) : '-' }}
+          </span>
+        </template>
+      </el-table-column>
       <el-table-column label="场内新增(万份)" align="center" min-width="120">
         <template #default="{ row }">
           <span :class="getRateClass(row.changeAmount)">
@@ -28,13 +35,7 @@
           </span>
         </template>
       </el-table-column>
-      <el-table-column label="份额涨幅" align="center" min-width="100">
-        <template #default="{ row }">
-          <span :class="getRateClass(row.changePct)">
-            {{ row.changePct != null ? formatPct(row.changePct) : '-' }}
-          </span>
-        </template>
-      </el-table-column>
+
     </el-table>
   </div>
 </template>
